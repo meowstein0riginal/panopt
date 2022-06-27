@@ -94,3 +94,11 @@ heroku create nazwa
 ### Utwórz plik (zwykly) Procfile
 
 ### zainstaluj django heroku (np. do requirements dopisać django-heroku a potem komenda pip install -r requirements.txt
+
+### konfiguracja django-heroku (w pliku settings dopisać:)
+import django_heroku
+django_heroku.settings(locals())
+
+### utworzymy plik .env
+
+w nim tworzymy SECRET_KEY=jakiś losowy ciąg znaków
