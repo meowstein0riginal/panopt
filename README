@@ -136,3 +136,17 @@ heroku run
 # po tej komendzie działamy  globalnie, na serwerze heroku. inaczej działalibyśmy lokalnie na swoim komputerze.
 na przykład z poziomu wirt. środowiska wpisujemy:
 heroku run python manage.py migrate
+to była migracja wykonana ręcznie, żeby była automatyczna dopisaliśmy drugi wiersz do pliku Procfile
+
+
+### przejście w tryb tymczasowej niedostępności strony:
+heroku maintenance:on
+
+### tworzenie superusera
+heroku run python manage.py createsuperuser
+
+
+### by nie było bledu CSRF trzeba dodac adres naszej apki do pliku settings
+ale musi być przed import django_heroku
+
+CSRF_TRUSTED_ORIGINS = ["https://murmuring-plains-12770.herokuapp.com/"]
