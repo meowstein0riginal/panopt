@@ -93,16 +93,46 @@ heroku create nazwa
 
 ### Utwórz plik (zwykly) Procfile
 
+w pliku wpisujemy:
+web: python manage.py runserver 0.0.0.0:$PORT
+
 ### zainstaluj django heroku (np. do requirements dopisać django-heroku a potem komenda pip install -r requirements.txt
 
 ### konfiguracja django-heroku (w pliku settings dopisać:)
 import django_heroku
 django_heroku.settings(locals())
 
+### w pliku settings dodajemy:
+import os
+i w secret key modyfikujemy linijkę żeby wyglądało tak jak poniżej:
+SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-+@knkf+k6!)x+od2bjgimvr*z29%3==z5g1afe$cs&@3+(1831')
+
 ### utworzymy plik .env
 
 w nim tworzymy SECRET_KEY=jakiś losowy ciąg znaków
 
-### ustawiamy smienną środowiskową na heroku
+### ustawiamy smienną środowiskową na heroku(wpisujemy w terminalu:)
 
 heroku config:set SECRET_KEY=ciagznakow(ten utworzony w pliku env)
+
+
+### dodanie zmian i commit
+
+git add .
+git commit -m "message"
+
+### wypchnięcie do heroku
+
+git push heroku master
+
+### heroku addons
+
+pokazuje dodatki
+
+### heroku run python manage.py shell
+
+heroku run
+# po tej komendzie działamy  globalnie, na serwerze heroku. inaczej działalibyśmy lokalnie na swoim komputerze.
+na przykład z poziomu wirt. środowiska wpisujemy:
+heroku run python manage.py migrate
