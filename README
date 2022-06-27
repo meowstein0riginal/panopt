@@ -1,0 +1,96 @@
+# Tworzenie projektu
+
+
+
+## Utwórz katalog dla porjektu
+
+mkdir nazwa_projektu
+
+
+## utwórz wirtualne środowisko
+
+python -m venv venv --prompt nazwa(środowiska)
+
+
+## aktywuj wirtualne sordowisko
+
+linux
+source venv/bin/activatate
+
+windows
+venv\Scripts\activate
+
+
+## instalacja django
+
+pip install django
+
+
+## Utworzenie requirements
+pip freeze > requirements.txt
+tworzy plik wersjami wykorzystywanych bibliotek, który można na innym komputerze wykorzystać do skonfigurowania wirt. środowiska komendą:
+pip install -r requirements.txt
+
+
+## utworzenie projektu
+
+np. polecenie:
+django-admin startproject nazwa
+
+utworzy
+
+nazwa
+    nazwa
+        settings.py
+        ...
+    manage.py
+
+a polecenie:
+django-admin startproject nazwa .
+
+nazwa
+    settings.py
+    ...
+manage.py
+
+## uruchomienie projektu
+
+python manage.py runserver
+
+## inicjacja repozytorium
+pop utworzeniu repozytorium na github jest tam link do skopiowania, jak:
+git remote add origin https://github.com/meowstein0riginal/panopt.git
+
+potem w głównym katalogu projektu robimy plik tekstowy .gitignore a w treści
+.idea
+db.sqlite3
+venv
+__pycache__
+
+
+potem możemy sprawdzić za pomocą
+git status
+
+potem
+git add .
+git status
+
+potem
+git commit -m initial
+
+potem
+git push origin master
+
+
+## utworzenie projektu heroku
+
+heroku create (losowa nazwa)
+
+lub
+
+heroku create nazwa
+
+
+### Utwórz plik (zwykly) Procfile
+
+### zainstaluj django heroku (np. do requirements dopisać django-heroku a potem komenda pip install -r requirements.txt

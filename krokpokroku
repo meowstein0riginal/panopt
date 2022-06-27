@@ -1,0 +1,47 @@
+tworzymy nowy projekt z wirt. środow.
+
+instalujemy w nim django "pip install django"
+
+robimy requirements (nazwa umowna, powrzechnie stosowana):
+pip freeze <enter> #daje to informacje o wszystkich modułach w danym wirt. środowisku, co można potem przenieść na inny komputer.
+pip freeze > requirements.txt <enter> - tworzy plik z z wynikami komendy pip freeze
+
+potem: pip install -r requirements.txt
+# stworzenie pliku requirements służy do przeniesienia go na inny komputer i po
+# wykorzystaniu powyższej komendy importujemy z niego informacjie o projekcie żeby na nowym kompie było kompatybilne
+# z tym co jest na starym.
+
+
+wpisujemy w terminalu:
+django-admin startproject Panopticum .
+#kropka po spacji daje, że nie tworzy się folder w folderze?
+###################################
+pop utworzeniu repozytorium na github jest tam link do skopiowania, jak:
+git remote add origin https://github.com/meowstein0riginal/panopt.git
+
+potem w głównym katalogu projektu robimy plik tekstowy .gitignore a w treści
+.idea
+db.sqlite3
+venv
+__pycache__
+
+
+potem możemy sprawdzić za pomocą
+git status
+
+potem
+git add .
+git status
+
+potem
+git commit -m initial
+
+potem
+git push origin master
+
+
+inna komenda dzięki której COŚ sprawdzimy: git remote -v
+dobry skrót dla zmiany nazwy: shift + F6
+
+
+
