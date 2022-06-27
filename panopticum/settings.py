@@ -126,3 +126,5 @@ CSRF_TRUSTED_ORIGINS = ["https://murmuring-plains-12770.herokuapp.com/"]
 
 import django_heroku
 django_heroku.settings(locals())
+
+CSRF_TRUSTED_ORIGINS = ["https://murmuring-plains-12770.herokuapp.com/"]
