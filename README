@@ -102,3 +102,7 @@ django_heroku.settings(locals())
 ### utworzymy plik .env
 
 w nim tworzymy SECRET_KEY=jakiś losowy ciąg znaków
+
+### ustawiamy smienną środowiskową na heroku
+
+heroku config:set SECRET_KEY=ciagznakow(ten utworzony w pliku env)
